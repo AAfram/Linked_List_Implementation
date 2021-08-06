@@ -1,0 +1,64 @@
+CASE STUDY IMPLEMENTATION OF A LINKED LIST
+The previous and next page in a web browser can be implemented using a linked list. The user can access the previous and next url searched in web browser by pressing the back and next button. Since webpages are linked, it can be implemented using a linked list.
+The add method can be used to append a url into the linked lists of webpages.
+The addAll method can be used to add a list of urls onto set of webpages
+The addFirst method can be used to append a url before the head node or fisrt url of a list of linked webpages 
+The addLast method can be used to append a url after the tail node or last url of a linked list of webpages
+The get method can be used to search through and get a speicified url from a linked list of webpages
+The remove method can be used to delete a url within the linked list of webpages
+The removeFirst method can be used delete the first url i.e.  the head node from a linked list of webpages 
+The removeLast method can be used to delete the last url i.e. the tail node from a linked list of webpages
+The getSize method can be used to scan through all the urls of a linked list of webpages to obtain its size
+Methods Implemented : - add, addAll, addFirst, addLast, get, removeFirst, removeLast, getSize
+import java.util.*; 
+   
+public class Main { 
+    public static void main(String args[])  { 
+        //create a linked list 
+        LinkedList&lt;String&gt; l_list = new LinkedList&lt;String&gt;(); 
+   
+        // Add elements to linkedList using various add methods
+        l_list.add("B"); 
+        l_list.add("C"); 
+        l_list.addLast("G"); 
+        l_list.addFirst("A"); 
+        l_list.add(3, "D"); 
+        l_list.add("E"); 
+        l_list.add("F"); 
+        //print the linkedList
+        System.out.println("Linked list : " + l_list);
+        
+        //Create and initialize an ArrayList
+        ArrayList&lt;String&gt; aList = new ArrayList&lt;&gt;();
+        aList.add("H");
+        aList.add("I");
+        //add the ArrayList to linkedList using addAll method
+        l_list.addAll(aList);
+        //print the linkedList
+        System.out.println("Linked list after adding ArrayList contents: " + l_list);
+   
+        // use various remove methods to remove elements from linkedList
+        l_list.remove("B"); 
+        l_list.remove(3); 
+        l_list.removeFirst(); 
+        l_list.removeLast(); 
+        //print the altered list
+        System.out.println("Linked list after deletion: " + l_list);
+
+        // use size methods to return Number of elements in the linked list 
+        int size = l_list.size(); 
+        System.out.println("Size of linked list = " + size); 
+
+        // Get and set elements from linked list 
+        Object element = l_list.get(3); 
+        System.out.println("Element returned by get() : " + element); 
+        l_list.set(3, "J"); 
+        System.out.println("Linked list after change : " + l_list); 
+         
+        //convert linkedList to Array using toArray methods
+        String [] list_array = l_list.toArray(new String[l_list.size()]);
+         
+        System.out.println("Array obtained from linked List:" +
+            Arrays.toString(list_array));
+
+
